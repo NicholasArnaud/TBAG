@@ -2,12 +2,12 @@
 #include "Classes.h"
 
 #pragma region Class_Commands
-FunString::FunString()
+MyString::MyString()
 {
 	// the default function constructor
 };
 
-FunString::FunString(char string[])
+MyString::MyString(char string[])
 {
 	int i;
 	for (i = 0; string[i] != '\0'; i++) // for loop reads all the characters in the given string arguements
@@ -17,7 +17,7 @@ FunString::FunString(char string[])
 	m_String[i] = '\0'; // adds the null character to the end of the string to prevent errors
 }
 
-int FunString::Length()
+int MyString::Length()
 {
 	int i = 0;
 	for (; m_String[i] != 0; i++);// loop runs until "i" reaches the null character of the string m_String
@@ -26,13 +26,13 @@ int FunString::Length()
 	return Strlen; //returns number of characters in string
 }
 
-char FunString::indexedChar(int j) // finds a character at a certain index that was inputed in main
+char MyString::indexedChar(int j) // finds a character at a certain index that was inputed in main
 {
 	char indChar = m_String[j]; // sets a char variable as the indexed char inside the string
 	return indChar; // returns the character in the string
 }
 
-bool FunString::Compared(FunString as) //compares two strings
+bool MyString::Compared(MyString as) //compares two strings
 {
 
 	if (m_String == as.m_String)	// if statement used to find a difference between 2 inputed strings
@@ -45,7 +45,7 @@ bool FunString::Compared(FunString as) //compares two strings
 	}
 }
 
-char* FunString::Append(FunString as) //adds the second string to the first
+char* MyString::Append(MyString as) //adds the second string to the first
 {
 	as.Length(); // runs the function Length to find the the length of the first string also allowing Strlen to be used without error
 	int m_Length = Strlen; // stores the first strings length as an integer
@@ -58,7 +58,7 @@ char* FunString::Append(FunString as) //adds the second string to the first
 	return m_String; // returns the new string
 }
 
-char* FunString::Prepend(FunString as)
+char* MyString::Prepend(MyString as)
 {
 	as.Length(); // runs the function Length to find the total length of the second string also allowing Strlen to be used without error
 	int m_Length = as.Strlen;	// stores the second strings length as an integer 
@@ -71,13 +71,13 @@ char* FunString::Prepend(FunString as)
 	return as.m_String; // returns the new string
 }
 
-const char* FunString::c_Style()
+const char* MyString::c_Style()
 {
 	const char* constString = m_String;	// creates a const character pointer towards the original string
 	return constString; // returns the now c-styled string
 }
 
-void FunString::lowerCase()
+void MyString::lowerCase()
 {
 
 	for (int j = 0; m_String[j]; j++) //loops through all the characters in the string
@@ -96,7 +96,7 @@ void FunString::lowerCase()
 	}
 }
 
-void FunString::upperCase()
+void MyString::upperCase()
 {
 
 	for (int j = 0; m_String[j]; j++) // loops through all the characters in the string
@@ -115,7 +115,7 @@ void FunString::upperCase()
 	}
 }
 
-int FunString::subStrLoc()
+int MyString::subStrLoc()
 {
 	int i, j, temp;	//used to get index given string and arrays
 	char substr[20] = { "state" }; //sets the substring
@@ -147,7 +147,7 @@ int FunString::subStrLoc()
 		return temp;
 }
 
-int FunString::stringatString(int k)
+int MyString::stringatString(int k)
 {
 	Length();
 	int w, nope; //used to index trough given string and arrays
@@ -178,13 +178,13 @@ int FunString::stringatString(int k)
 	return nope;
 }
 
-void FunString::strRepStr()
+void MyString::strRepStr()
 {
 	//No understanding yet
 	// is a bonus
 }
 
-char* FunString::c_enterStyle()
+char* MyString::c_enterStyle()
 {
 	char string[255]; // sets string in c-style
 	std::cin >> string; //user changes the preset string
@@ -203,12 +203,4 @@ char* FunString::c_enterStyle()
 
 
 Forest::Forest() {};
-Forest::Forest(char Name[]) 
-{
-	int i;
-	for (i = 0; Name[i] != '\0'; i++) // for loop reads all the characters in the given string arguements
-	{
-		Name[i] = Name[i]; // sets all the characters into the string class
-	}
-	Name[i] = '\0';
-}
+Enemy::Enemy()  { int m_hp, char* Name; };
